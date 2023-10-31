@@ -1,0 +1,84 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #fff;
+    background-color: #272727;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.settings {
+    background: #4d4d4d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7rem 0;
+    margin: 1rem 10rem;
+    border-radius: 50px;
+}
+
+.textSettings {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    padding: 0.5rem 0;
+}
+
+.versionSettings {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.checkbox {
+    font-weight: bold;
+    margin: 0.3rem 0;
+    border: solid 4px #fff;
+    border-radius: 20px;
+    width: 150px;
+    padding: 10px;
+    font-size: 1.3rem;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+.checked{
+    border: solid 4px #00ff04;
+}
+
+.minecraftVersions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.version {
+    background: #4d4d4d;
+    margin: 0.5rem 1rem;
+    user-select: none;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    width: 220px;
+    border-radius: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.version:hover {
+    background: #ababab;
+}
+
+.versionTitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
