@@ -10,6 +10,18 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+* {
+    outline: none;
+}
+
+.content-scroll {
+    overflow: auto;
+}
+
+.content-scroll::-webkit-scrollbar {
+    width: 0;
+}
+
 .container {
     height: 100%;
     width: 100%;
@@ -42,7 +54,7 @@ body {
 .checkbox {
     font-weight: bold;
     margin: 0.3rem 0;
-    border: solid 4px #fff;
+    border: solid 4px #ff0000;
     border-radius: 20px;
     width: 150px;
     padding: 10px;
@@ -51,7 +63,8 @@ body {
     user-select: none;
     cursor: pointer;
 }
-.checked{
+
+.checked {
     border: solid 4px #00ff04;
 }
 
@@ -81,4 +94,127 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    pointer-events: none;
 }
+
+.versionInfo {
+    pointer-events: none;
+}
+
+.resultPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    background: #00000075;
+    opacity: 0;
+    transform: scale(0);
+    transition: all .5s ease-in-out;
+}
+
+.showPopup {
+    z-index: 1;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.closePopup {
+    position: absolute;
+    display: flex;
+    top: 10px;
+    right: 10px;
+    background: #2d2d2d;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.closePopup:hover {
+    background: #ff0000;
+}
+
+.containerPopup {
+    position: relative;
+    width: 70%;
+    max-height: 70%;
+    background: #4d4d4d;
+    border-radius: 10px;
+    padding: 0.5rem 0;
+}
+
+.listLodder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loadder {
+    display: flex;
+    width: 80%;
+    background: #828282;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.loadder:hover {
+    background: #ababab;
+}
+
+.active {
+    padding-bottom: 0;
+}
+.active:hover {
+    background: #828282;
+}
+
+.loadder h1 {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+.loadderList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    cursor: default;
+}
+
+.loadderVersion {
+    background: #4d4d4d;
+    margin: 0.5rem 1rem;
+    user-select: none;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    border-radius: 15px;
+    transition: all 0.2s ease-in-out;
+    padding: 1rem 0.5rem;
+    text-decoration: none;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
