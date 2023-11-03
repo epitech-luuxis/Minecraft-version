@@ -43,17 +43,16 @@ document.addEventListener('DOMContentLoaded', e => {
             document.querySelectorAll('.loadderList').forEach(loadderList => {
                 loadderList.innerHTML = '';
             })
+
+            document.querySelectorAll('.loadder').forEach(loadder => {
+                loadder.classList.remove('active');
+            })
         }
 
         if (target.classList.contains('loadder')) {
             let loadderType = target.classList[1];
             let loadderVersion = await getLoadderMinecraft(minecraftVersion, loadderType);
             let loadderElement = document.querySelector(`.${loadderType} .loadderList`);
-            
-            if (loadderVersion.length <= 0) {
-                loadderElement.innerHTML = 'Aucune version disponible';
-                return;
-            }
 
             if (target.classList.contains('active')) {
                 target.classList.toggle('active');
@@ -61,6 +60,11 @@ document.addEventListener('DOMContentLoaded', e => {
                 return;
             } else {
                 target.classList.toggle('active');
+            }
+
+            if (loadderVersion.length <= 0) {
+                loadderElement.innerHTML = 'Aucune version disponible';
+                return;
             }
 
 

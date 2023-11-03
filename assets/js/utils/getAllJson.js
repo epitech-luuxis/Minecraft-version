@@ -69,14 +69,14 @@ async function getLoadderMinecraft(minecraftversion, loaderType) {
         let version = response[`${minecraftversion}`];
 
         if (!version) return loaderList;
-        else loaderList = version
+        else loaderList = version.reverse()
     }
 
     if (loaderType === 'neoforge') {
         let version = response.versions.filter(version => version.includes(`${minecraftversion}-`));
 
         if (!version.length) return loaderList;
-        else loaderList = version
+        else loaderList = version.reverse()
     }
 
     return loaderList;
